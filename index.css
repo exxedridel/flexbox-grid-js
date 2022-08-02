@@ -16,25 +16,35 @@ body {
   padding: 0.25em;
 
   display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 600px) {
+  .flex-container {
+      flex-direction: row;
+  }
 }
 
 .flex-item {
-  background: #8bee86;
-  margin: 0.5em;
-  padding: 0.5em;
+  background: #8BEE86;
+  margin: .5em;
+  padding: .5em;
   color: #424656;
+  
+  width: 200px;
+  
 }
 
 .flex-item-1 {
   background: plum;
-  /* flex-grow: 0; */
-  /* default */
-  flex-shrink: 0;
-  /* refuse to shrink */
+  flex-basis: 100px;
+  min-width: 200px;
+  max-height: 25px;
+  /* min- max- important to use since can override flex-basis since is not width or height property */
 }
+
 .flex-item-2 {
-  flex-grow: 2;
 }
+
 .flex-item-3 {
-  flex-grow: 3;
 }
