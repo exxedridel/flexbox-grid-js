@@ -12,6 +12,11 @@ body {
     max-width: 600px;
     margin: 0 auto;
     padding: .25em;
+
+    display: flex;
+    /* flex-direction: row;
+    flex-wrap: wrap; */
+    flex-flow: row-reverse wrap; /*shorthand*/
 }
 
 .flex-item {
