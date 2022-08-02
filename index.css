@@ -11,27 +11,30 @@ body {
 
 .flex-container {
   border: 10px solid #f9f871;
-  max-width: 700px;
+  width: 80%;
   margin: 0 auto;
   padding: 0.25em;
 
-  min-height: 200vh;
-
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-end;
-  align-content: space-between;
-  /* only works when multiple rows of content */
-}
-
-.big {
-   font-size: 2em;
 }
 
 .flex-item {
   background: #8bee86;
-  margin: 25px;
-  padding: 25px;
+  margin: 0.5em;
+  padding: 0.5em;
   color: #424656;
+}
+
+.flex-item-1 {
+  background: plum;
+  /* flex-grow: 0; */
+  /* default */
+  flex-shrink: 0;
+  /* refuse to shrink */
+}
+.flex-item-2 {
+  flex-grow: 2;
+}
+.flex-item-3 {
+  flex-grow: 3;
 }
