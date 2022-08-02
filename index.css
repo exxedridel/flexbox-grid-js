@@ -16,6 +16,8 @@ body {
   padding: 0.25em;
 
   display: flex;
+  align-items: flex-start; /*this gets overrided by align-self*/
+  height: 50vh;
 }
 
 .flex-item {
@@ -29,20 +31,14 @@ body {
 
 .flex-item-1 {
   background: plum;
-  flex: 0 1 auto; /* default */
-  /* flex-grow, flex-shrink, flex-basis */
-
-  /* flex: auto;
-    equals
-    flex: 1 1 auto; */
+  align-self: flex-start;
 }
 
 .flex-item-2 {
-  flex: 1;
-  /* grow: 1, flex-basis: 0 */
+  align-self: center;
 }
 
 .flex-item-3 {
-  flex: 300px;
-  /* flex-basis: 300px; */
+  /* align-self: stretch; */
+  align-self: flex-end;
 }
