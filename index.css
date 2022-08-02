@@ -15,8 +15,9 @@ body {
   margin: 0 auto;
   padding: 0.25em;
 
-  display: flex;
-  align-items: flex-start; /*this gets overrided by align-self*/
+  display: flex; /*put this allows to center with margin auto on the child*/
+  flex-direction: column;
+  align-items: flex-start; 
   height: 50vh;
 }
 
@@ -31,14 +32,15 @@ body {
 
 .flex-item-1 {
   background: plum;
-  align-self: flex-start;
+  /* margin: auto; centered */
+  /* margin-top: auto; pushes it all the way down */
 }
 
 .flex-item-2 {
-  align-self: center;
 }
 
 .flex-item-3 {
-  /* align-self: stretch; */
-  align-self: flex-end;
+  /* align-self: flex-end; dindt place it bottom since axis changed with column property */
+  /* margin-bottom: auto; this centers */
+  margin-top: auto; /*worked*/
 }
