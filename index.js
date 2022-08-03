@@ -1,7 +1,9 @@
 /* 
-    Use fetch() to load 1, then 5, then 25 colors from the hexcolors api
-
-    Use FlexBox to create a Responsive 5x5 Grid displaying the colors    
+    Create a variable to store the count of colors to be loaded
+    
+    Update the getColors() function to take that count as a parameter
+    
+    Set the count to 100 colors, update the .my-color class to maintain the grid structure
 */
 
 function displayColors(colors) {
@@ -18,8 +20,10 @@ function displayColors(colors) {
    </div>`;
 }
 
+let colorsAmmount = 100
+
 async function getColors() {
-  let response = await fetch("https://apis.scrimba.com/hexcolors?count=25");
+  let response = await fetch(`https://apis.scrimba.com/hexcolors?count=${colorsAmmount}`);
   let data = await response.json();
   let colors = data.colors;
 
