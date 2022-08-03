@@ -1,46 +1,106 @@
-* {
-  box-sizing: border-box;
-}
-
 body {
   margin: 0;
-  background: #2c73d2;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: red;
+  border: 5px solid white; */
+}
+
+.card {
+  width: 90%;
+  max-width: 800px;
+  background: #111d4a;
   color: #fff;
-  text-align: center;
-}
-
-.flex-container {
-  border: 10px solid #f9f871;
-  width: 80%;
-  margin: 0 auto;
-  padding: 0.25em;
-
-  display: flex; /*put this allows to center with margin auto on the child*/
+  display: flex;
   flex-direction: column;
-  align-items: flex-start; 
-  height: 50vh;
 }
 
-.flex-item {
-  background: #8bee86;
-  margin: 0.5em;
-  padding: 0.5em;
-  color: #424656;
-
-  width: 200px;
+.card-img {
+  object-fit: cover;
+  flex-basis: 200px;
+  min-width: 0;
+  min-height: 0;
+  
+  background: yellow;
 }
 
-.flex-item-1 {
-  background: plum;
-  /* margin: auto; centered */
-  /* margin-top: auto; pushes it all the way down */
+.card-content {
+  padding: 1em;
 }
 
-.flex-item-2 {
+.card-title,
+.card-read-time,
+.card-btn {
+  font-family: 'Blinker', sans-serif;
 }
 
-.flex-item-3 {
-  /* align-self: flex-end; dindt place it bottom since axis changed with column property */
-  /* margin-bottom: auto; this centers */
-  margin-top: auto; /*worked*/
+.card-title {
+  color: #05cbe9;
+  font-size: 1.75rem;
+  margin: 0;
+}
+
+.card-body {
+  font-size: 1rem;
+  font-family: 'Source Sans Pro', sans-serif;
+  line-height: 1.6;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 3em;
+}
+
+.card-btn {
+  font-size: 1.25rem;
+  background: #05cbe9;
+  color: #111d4a;
+  text-decoration: none;
+  font-weight: 700;
+  padding: .35em 1em;
+  letter-spacing: 1px;
+}
+
+.card-read-time {
+  margin: 0;
+  opacity: .6;
+  line-height: 1;
+}
+
+.card-read-time span {
+  font-weight: 700;
+  display: block;
+  font-size: 1.25em;
+}
+
+@media (min-width: 600px) {
+  .card {
+      flex-direction: row;
+  }
+  
+  .card-img {
+      height: 300px;
+  }
+  
+  .card-content {
+      display: flex;
+      flex-direction: column;
+  }
+  
+  .card-title {
+      font-size: 2.25rem
+  }
+  
+  .card-body {
+      font-size: 1.125rem;
+      max-width: 500px;
+  }
+  
+  .card-footer {
+      margin-top: auto;
+  }
 }
