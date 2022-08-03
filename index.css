@@ -11,14 +11,14 @@ html, body {
 
 .my-gallery {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: center;
 }
 
 .my-photos {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .my-photo {
@@ -26,3 +26,7 @@ html, body {
   border-radius: 0.7rem;
   margin: 0.5rem;
 }
+
+#my-selected-photo {
+  align-self: flex-start;
+} /* or just change in .my-gallery to flex-start but will no longer centered when bigger screens  */
