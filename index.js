@@ -1,33 +1,31 @@
 /* 
-    Create a variable to store the count of colors to be loaded
-    
-    Update the getColors() function to take that count as a parameter
-    
-    Set the count to 100 colors, update the .my-color class to maintain the grid structure
+    1. 
+        Use fetch() to load data from photos.json
+        
+        Display the photos inside of a FlexBox container
+            The src will be https://picsum.photos/id/${photo.id}/100/100
+            The alt text will be the photo.title from the json
+
+        Use Flexbox to display the photos in a Row 
+            The Row should Wrap to a new line on overflow
+            Give each photo a white 0.1rem solid border
+            Rounded corners at 0.7rem border-radius
+            Each photo should be at least 1rem away from the photos around it
 */
 
-function displayColors(colors) {
-  let myColorsHtml = colors
-    .map((color) => {
-      return `<div class="my-color" style="background-color: ${color.value}">
-         ${color.value}
-      </div>`;
+async function getPhotos() {
+  let response = await fetch("photos.json");
+  let photos = await response.json();
+  return photos;
+}
+
+getPhotos().then((photos) => {
+  let myPhotosHtml = photos
+    .map((photo) => {
+      return `<img src="https://picsum.photos/id/${photo.id}/100/100" alt="${photo.title}"/>`;
     })
     .join("");
+  console.log(myPhotosHtml);
 
-  document.body.innerHTML = `<div class="my-colors">
-      ${myColorsHtml}   
-   </div>`;
-}
-
-let colorsAmmount = 100
-
-async function getColors() {
-  let response = await fetch(`https://apis.scrimba.com/hexcolors?count=${colorsAmmount}`);
-  let data = await response.json();
-  let colors = data.colors;
-
-  displayColors(colors);
-}
-
-getColors();
+  document.body.innerHTML = `<div class="my-photos">${myPhotosHtml}</div>`;
+});

@@ -1,20 +1,24 @@
 html, body {
   margin: 0;
   padding: 0;
-  background-color: blanchedalmond;
+  background-color: #2A1A1F;
+  color: white;
 }
 
 * {
   font-family: "Lucida Console", Monaco, monospace; 
 }
 
-.my-colors {
+.my-photos {
   display: flex;
-  height: 100vh;
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+
 }
 
-.my-color {
-  height: 10%;
-  width: 10%;
+img {
+  border: 0.1rem solid white;
+  border-radius: 0.7rem;
 }
