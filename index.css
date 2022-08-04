@@ -33,7 +33,7 @@ html, body {
   border-radius: 1rem;
 }
 
-.user-profile-company > div {
+.user-profile-company div {
   margin: 0.3rem;
   font-size: 1.1rem;
 }
@@ -47,7 +47,7 @@ html, body {
   border: 0.1rem solid black;
 }
 
-.user-profile-contact > div {
+.user-profile-contact div {
   margin: 0.3rem;
 }
 
@@ -57,11 +57,3 @@ html, body {
   background-color: aquamarine;
   padding: 0.3rem;
 }
-
-
-
-
-
-
-
-
