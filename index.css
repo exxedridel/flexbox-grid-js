@@ -10,10 +10,10 @@
 
 @media (min-width: 600px) {
   .grid {
-    grid-template-columns: 100px 300px 100px 100px;
+    grid-template-columns: 100px minmax(200px, 600px) minmax(100px, 300px) 100px;
     grid-template-areas: 
-      ". . . ."
-      "header content sidebar ."
+      "header header header header"
+      ". content sidebar ."
       "footer footer footer footer";
   }
 }
