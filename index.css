@@ -76,8 +76,9 @@ body {
 
 @media (min-width: 600px) {
   .card {
-    grid-template: 1.3em auto auto 150px 1.3em / 230px 1.3em auto auto 1.3em;
-  }          /*next commit has alternative solution to this '1.3em'*/
+    grid-template: 1.3em auto auto 150px 1.3em / 230px 1.3em auto auto 1.3em; 
+    /* grid-gap: 0 1em; */                  /* / 200px auto auto 0px;*/  /*another solution*/
+  }                                               
   .card-img {
     grid-row: 1 / -1;
     grid-column: 1 / 2;
