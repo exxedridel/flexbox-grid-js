@@ -1,37 +1,7 @@
 .grid {
   display: grid;
-  grid-template-columns: 5em auto 5em;
-  grid-template-areas: 
-    "header header header"
-    ". content ."
-    ". sidebar ."
-    "footer footer footer"
-}
-
-@media (min-width: 600px) {
-  .grid {
-    grid-template-columns: 100px minmax(200px, 600px) minmax(100px, 300px) 100px;
-    grid-template-areas: 
-      "header header header header"
-      ". content sidebar ."
-      "footer footer footer footer";
-  }
-}
-
-.header {
-  grid-area: header;
-}
-
-.sidebar {
-  grid-area: sidebar;
-}
-
-.big {
-  grid-area: content;
-}
-
-.footer {
-  grid-area: footer;
+  grid-template-columns: 1fr 1fr 1fr;
+  /*cant use minmax with frs*/
 }
 
 .grid-item {
