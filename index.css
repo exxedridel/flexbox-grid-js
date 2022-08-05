@@ -1,11 +1,26 @@
-/* implicit created rows/colums take the grid-auto property*/
-
 .grid {
   display: grid;
-  grid-template-rows: 50px 100px 200px;
-  grid-auto-rows: 500px;
-  grid-template-columns: 300px 500px;
-  grid-auto-columns: 120px;
+  grid-template-columns: 150px 150px 200px;
+  grid-template-areas: 
+    "sidebar header header" 
+    "sidebar content content"
+    "sidebar footer footer";
+}
+
+.header {
+  grid-area: header;
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+.big {
+  grid-area: content;
+}
+
+.footer {
+  grid-area: footer;
 }
 
 .grid-item {
@@ -21,5 +36,4 @@
 .big {
     padding: 3em 2em;
     background: #FF5670;
-    grid-column: 4 / 5;
 }
