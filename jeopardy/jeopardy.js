@@ -1,44 +1,40 @@
 /* 
-    Jeopardy
+    Jeopardy (Challenge)
     
-    Write an async function 
-        that uses fetch() to fetch 4 categories 
-        from https://jservice.io/api/categories
-        parameters: count, offset
-        
-    Display the categories
-        in a simplified 4x5 Jeopardy Board 
-        using CSS Grid
+    Update getCategories to take 
+        count/offset arguments
+    Fetch 5 Categories (Update the display as necessary)
+    
+    Write a getClueHtml() function
+        calculate grid-row-start based on the input value
+        which will be 100, 200, 300 and 400
 */
 
-async function getCategories() {
-  let response = await fetch(
-    "https://jservice.io/api/categories?count=4&offset=44"
-  );
+async function getCategories(count, offset) {
+  let response = await fetch(`https://jservice.io/api/categories?count=${count}&offset=${offset}`);
   let data = await response.json();
-
+  console.log(response)
   return data;
 }
 
-getCategories().then((categories) => {
-  console.log(categories);
-  let myCategoriesHtml = categories
-    .map((categorie) => {
-      return `
-         <div class="my-categorie">${categorie.title}</div>
-         <div class="my-category-clue" style="grid-row-start: 2">$100</div>
-         <div class="my-category-clue" style="grid-row-start: 3">$200</div>
-         <div class="my-category-clue" style="grid-row-start: 4">$300</div>
-         <div class="my-category-clue" style="grid-row-start: 5">$400</div>
-      `;
-    })
-    .join("");
+function getClueHtml(clueValue) {
+  return `
+      <div class="my-category-clue" style="grid-row-start: ${clueValue / 100 + 1}">$${clueValue}</div>
+   `;
+}
 
+function getCategoryHtml(category) {
+  return `
+      <div class="my-category-title">${category.title}</div>
+      ${getClueHtml(100)}
+      ${getClueHtml(200)}
+      ${getClueHtml(300)}
+      ${getClueHtml(400)}
+   `;
+}
+
+getCategories(5, 30).then((categories) => {
   document.body.innerHTML = `
-      <a href="../index.html">
-         <button>Go back</button>
-      </a>
-   
-      <div class="board">${myCategoriesHtml}</div>
+      <div class="board">${categories.map(getCategoryHtml).join("")}</div>
    `;
 });
