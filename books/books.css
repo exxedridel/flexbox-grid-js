@@ -1,0 +1,43 @@
+html,
+body {
+  font-family: "Raleway", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: lightyellow;
+  padding: 1rem;
+}
+
+.my-library {
+   
+}
+
+.a-book {
+  margin: 1rem;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-areas: 
+   "id title author" 
+   "wiki wiki wiki";
+}
+
+.a-book * {
+  border: 0.12rem solid crimson;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0.3rem;
+}
+
+.a-book-id {
+   grid-area: id;
+}
+.a-book-title {
+   grid-area: title;
+}
+.a-book-author {
+   grid-area: author;
+}
+.a-book-wiki {
+   grid-area: wiki;
+}
