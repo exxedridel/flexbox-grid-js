@@ -2,13 +2,17 @@ body {
   font-family: 'Raleway', sans-serif;
   color: #555;
   background: #333;
-  margin: 3em;
+  margin: 1.5em;
+}
+
+a {
+  text-decoration: none;
 }
 
 .portfolio {
-  padding: 1em;
+  
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   /* repeat(auto-fill, X) will keep adding in new columns even if they're empty */
   grid-gap: 1em;
 }
@@ -20,10 +24,13 @@ body {
 }
 
 img {
+  height: 60%;
   max-width: 100%;
+  /* object-fit: cover; */
 }
 
 .portfolio-card {
+  height: 300px;
   box-shadow: 0 0 1em rgba(0,0,0,.25);
   padding: 1em;
   background: white;

@@ -33,7 +33,7 @@ function getCategoryHtml(category) {
    `;
 }
 
-getCategories(5, 30).then((categories) => {
+getCategories(5, 7).then((categories) => {
   document.body.innerHTML = `
       <div class="board">${categories.map(getCategoryHtml).join("")}</div>
    `;
