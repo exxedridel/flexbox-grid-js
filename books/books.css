@@ -1,43 +1,53 @@
-html,
-body {
-  font-family: "Raleway", sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: lightyellow;
-  padding: 1rem;
+html, body {
+   margin: 0;
+   padding: 0;
+   background-color: lightyellow;
+   padding: 1rem;
 }
 
 .my-library {
-   
+   display: grid;
+   grid-gap: 1rem;
+   grid-template-columns: repeat(3, calc(100% / 3));
 }
 
-.a-book {
-  margin: 1rem;
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-template-areas: 
-   "id title author" 
-   "wiki wiki wiki";
+.my-book {
+   display: grid;
+   grid-template-columns: 1rem 7rem;
+   grid-template-areas: 
+       "spine cover"
+       "footer footer";
 }
 
-.a-book * {
-  border: 0.12rem solid crimson;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 0.3rem;
+.my-book div {
+   border: 0.1rem solid black;
 }
 
-.a-book-id {
-   grid-area: id;
+.my-book-cover {
+   grid-area: cover;
+   height: 7rem;
+   background-color: lightgreen;
+   text-align: center;
+   padding: 1rem;
 }
-.a-book-title {
-   grid-area: title;
+
+.my-book-spine {
+   grid-area: spine;
+   background-color: #4A4238;
+   border-top-left-radius: 0.3rem;
 }
-.a-book-author {
-   grid-area: author;
+
+.my-book-footer {
+   grid-area: footer;
+   padding: 0.2rem;
+   background-color: lightgray;
+   border-bottom-left-radius: 0.3rem;
 }
-.a-book-wiki {
-   grid-area: wiki;
+
+.my-book:nth-of-type(even) .my-book-cover {
+   background-color: lightblue;  
+}
+
+.my-book:nth-of-type(even) .my-book-spine {
+   background-color: #E1B07E;  
 }

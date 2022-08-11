@@ -10,7 +10,6 @@ a {
 }
 
 .portfolio {
-  
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   /* repeat(auto-fill, X) will keep adding in new columns even if they're empty */
